@@ -1,0 +1,23 @@
+#include "binary_tree.h"  // Include the header with the binary_tree_t definition
+#include <stdlib.h>        // For malloc, free
+
+int main(void)
+{
+    // Create a simple binary tree
+    binary_tree_t *root = malloc(sizeof(binary_tree_t));
+    root->n = 1;
+    root->left = malloc(sizeof(binary_tree_t));
+    root->right = malloc(sizeof(binary_tree_t));
+    root->left->n = 2;
+    root->right->n = 3;
+    root->left->left = NULL;
+    root->left->right = NULL;
+    root->right->left = NULL;
+    root->right->right = NULL;
+
+    // Call binary_tree_delete to delete the tree
+    binary_tree_delete(root);
+
+    return 0;
+}
+
